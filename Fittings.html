@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Settings</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    .settings-container {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff9f9;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    select.form-control {
+        width: 100%;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    body.dark-mode {
+        background-color: #333;
+        color: #fff;
+    }
+
+    .buffer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Semi-transparent black */
+        opacity: 0;
+        /* Initially invisible */
+        transition: opacity 0.3s ease-in-out;
+        /* Smooth transition */
+    }
+
+    .buffer.active {
+        opacity: 1;
+        /* Becomes visible on click */
+    }
+</style>
+<script>
+    const securityLink = document.getElementById('securityLink');
+
+    securityLink.addEventListener('click', () => {
+        const buffer = document.createElement('div');
+        buffer.classList.add('buffer'); 
+        document.body.appendChild(buffer); 
+
+        setTimeout(() => {
+            buffer.classList.remove('active'); 
+        }, 1000);
+
+        buffer.classList.add('active'); 
+    });
+
+    const securityLink = document.getElementById('securityLink');
+
+    securityLink.addEventListener('click', () => {
+        // Code to display a buffer with effect
+    });
+</script>
+
+<body>
+
+    <div class="dark-mode-toggle">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <h1>Settings</h1>
+    <div class="settings-container">
+        <form>
+            <div class="form-group">
+                <label for="eventname">Edit Event Name</label>
+                <input type="text" class="form-control" id="eventname" placeholder="Enter new event name">
+            </div>
+            <div class="form-group">
+                <label for="language">Language</label>
+                <select class="form-control" id="language">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="te">Telugu</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="eventdate">Event starts on</label>
+                <input type="date" class="form-control" id="eventdate" placeholder="Select date" min="2022-10-01">
+            </div>
+            <div class="form-group">
+                <label for="eventdate">Event ends on</label>
+                <input type="date" class="form-control" id="eventdate" placeholder="Select date" min="2022-10-01">
+            </div>
+            <div class="form-group">
+                <label for="notifications"></label>
+                <input type="checkbox" id="darkmode">Enable Notifications
+            </div>
+            <div class="form-group">
+                <p><a href="sett.html">Security notifications</a></p>
+                <button type="submit" class="btn btn-primary">I Agree</button>
+            </div>
+        </form>
+</body>
+
+</html>
